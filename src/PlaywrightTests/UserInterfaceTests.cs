@@ -24,11 +24,11 @@ public class UserInterfaceTests
         await page.GotoAsync("https://letsusedata.com");
         
         // Fill in the login credentials for Test1
-        await page.FillAsync("[id=\"txtUser\"]", "Test1");
-        await page.FillAsync("[id=\"txtPassword\"]", "12345678");
+        await page.FillAsync("#txtUser", "Test1");
+        await page.FillAsync("#txtPassword", "12345678");
     
         // Click on the login button
-        await page.ClickAsync("[id=\"javascriptLogin\"]");
+        await page.ClickAsync("#javascriptLogin");
         
         // Verify that the user is logged in successfully, but scince we know this will fail, expect an error
         await Assertions.Expect(page.GetByText("Invalid Password")).ToBeVisibleAsync();
@@ -48,11 +48,11 @@ public class UserInterfaceTests
         await page.GotoAsync("https://letsusedata.com");
         
         // Fill in the login credentials for Test1
-        await page.FillAsync("[id=\"txtUser\"]", "Test2");
-        await page.FillAsync("[id=\"txtPassword\"]", "iF3sBF7c");
+        await page.FillAsync("#txtUser", "Test2");
+        await page.FillAsync("#txtPassword", "iF3sBF7c");
     
         // Click on the login button
-        var response = await page.RunAndWaitForNavigationAsync(async () => await page.ClickAsync("[id=\"javascriptLogin\"]"));
+        var response = await page.RunAndWaitForNavigationAsync(async () => await page.ClickAsync("#javascriptLogin"));
         
         // Verify that the user is logged in successfully
         Assert.Equal("https://letsusedata.com/CourseSelection.html", page.Url);
