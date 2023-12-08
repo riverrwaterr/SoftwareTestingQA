@@ -26,7 +26,7 @@ jobs:
 
     - name: Build
       run: dotnet build ./src/SoftwareTesting.sln --no-restore
-
+# install
     - name: Browser install
       run: |
         pwsh /home/runner/work/SoftwareTestingQA/SoftwareTestingQA/src/PlaywrightTests/bin/Debug/net6.0/playwright.ps1 install --with-deps
