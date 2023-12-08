@@ -30,7 +30,7 @@ public class UserInterfaceTests
         // Click on the login button
         await page.ClickAsync("#javascriptLogin");
         
-        // Verify that the user is logged in successfully, but scince we know this will fail, expect an error
+        // Verify that the user is logged in successfully, scince we know this will fail, expect an error instead
         await Assertions.Expect(page.GetByText("Invalid Password")).ToBeVisibleAsync();
     }
     // Do the same test but with Test2 credentials
